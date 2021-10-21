@@ -1,0 +1,54 @@
+APP: Pizza
+_______________________________________________
+Account aanmaken/inloggen
+
+Mits aanmaken:
+naam, adres, email, telefoonnummer, wachtwoord.
+_______________________________________________
+
+Ingelogd
+
+Bezorgen/Afhalen
+Kies tijdstip
+Menu
+	pizza
+	salades
+	drankjes
+	milkshake
+Afrekenen
+
+______________________________________________
+GUI - Dart
+Logica - Python
+
+
+
+
+
+
+HET PROCES
+De klant bestelt een order
+De cassier ontvangt de order en drukt er op het beeldscherm van een kassaaparaat in
+De cassier zegt de totale prijs die door het ingebouwde rekenmachine werd opgeteld
+De koper betaalt contant de order, de cassier stelt het contant bedrag vast en geeft wisselgeld terug
+
+Terwijl de cassier ontvangt volgende bestellingen, wordt de bestelling op het beeldscherm van de kok weergegeven waarna hij gaat aan de slag
+De ingridienten worden tegelijkertijd weergegeven en het kookproces van een product zodat de kok geen foutmaakt
+Als de kok klaar is met het samenstellen van ingredienten en het koken daarbij, drukt hij op het beeldscherm dat de bestelling klaar staat te wachten
+Daarna begint de kok opnieuw met de volgende bestelling
+
+De cassier geeft de bestelling door aan de klant en vervolgens is de bestelling afgerond.
+
+BENODIGDE INSTRUMENTEN
+-- dataverwerking 	- programma dat de productengegevens opslaat in een database en haalt ze op.
+-- rekenmachine 	- programma dat het totale bedrag van de bestelling optelt en berekent het wisselgeld.
+-- kassasoftware 	- GUI waarmee bestelling wordt geaccepteerd en gestuurd naar de koksoftware, wisselgeld berekend en bon verwerkt.
+-- koksoftware		- GUI dat de kookinstructie weergeeft aan de kok en verwerkt de invoer van de kok als de bestelling klaar is.
+
+Begindatum	:	dinsdag 22 juni 2021 
+Einddatum	:	dinsdag  5 juli 2021
+
+moonwake769
+
+
+Muis903
