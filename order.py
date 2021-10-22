@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # IMPORTING necessary libraries and scripts.
 #
@@ -11,9 +10,6 @@ from random import choice
 #
 # DEFINING functions.
 #
-=======
-
->>>>>>> 72b69eebf434791a4a0634ddec030018320bb6eb
 
 
 def get_order():
