@@ -1,0 +1,6 @@
+# Ignore the Environment variable
+.env
+
+# Ignore all files with .swp file format.
+*.swp
+
