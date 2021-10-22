@@ -1,35 +1,36 @@
-def make_order_number():
-    """Make a list with random numbers."""
+
+
+def get_order():
+    """GETTING THE ORDER."""
+    order_id = get_order_id()
+    order = input("-> Order: ")
+    # SAVE the order in JSON.
+    save_order(order_id, order)
+
+    return order + " #" order_id
+
+
+def get_order_id():
+    """GETTING THE ORDER ID."""
     numbers = []
     if not numbers:
         for number in range(1, 1000):
             numbers.append(number)
+    order_id = numbers.pop(choice(numbers))
 
-    order_number = numbers.pop(choice(numbers))
-
-    return order_number
-
-
-def accept_order(order_number, order):
-    """Accept and  save the new order"""
-    order_number = make_order_number()
-    accepted_order = str(order_number) + " - " + order.title()
-    with open("show_order_2screen.py", "w") as file:
-        file.write(order)
-
-    return accepted_order
+    return order_id
 
 
-def show_order(accepted_order):
+def show_order():
     """Show the order to the cook."""
-    print(accepted_order)
+    print(order)
 
 	
-def give_order(accepted_order, pay):
+def give_order(order, pay):
     ready_order = True
-    if ready_order and len(accepted_order) > 20:
-        print(f"Your {accepted_order[:20]}... is ready to take away!")
+    if ready_order and len(order) > 20:
+        print(f"Your {order[:20]}... is ready to take away!")
         print(str(pay) + " to pay.")
-    if ready_order and len(accepted_order) < 20:
-        print(f"Your {accepted_order} is ready to take away!")
+    if ready_order and len(order) < 20:
+        print(f"Your {order} is ready to take away!")
         print(str(pay) + " to pay.")
