@@ -4,3 +4,4 @@
 # Ignore all files with .swp file format.
 *.swp
 
+__pycache__/
