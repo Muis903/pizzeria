@@ -14,27 +14,28 @@ def add_staff():
     """Add new staff and save it in the list."""
 
     #Data
-    name = input("First and last name: ")
-    birthday = input("Birthday dd/mm/yyyy: ")
-    login = input("Login: ")
-    password = input("Password: ")
-    function = input("Function: ")
+    name = "Name: " + input("First and last name: ")
+    birthday = "Birthday: " + input("Birthday dd/mm/yyyy: ")
+    login = "Login: " + input("Login: ")
+    password = "Password: " + input("Password: ")
+    function = "Function: " + input("Function: ")
 
     #Create profile
-    profile = str("\n" + "Name: " + name.title() + "\n"
-        + "Birthday: " + "\n" + "Login: " + login + "\n" + "Password: " + password + "\n" + "Function: " + function)
-    return profile
+    profile = [name, birthday, login, password, function]
 
     #Add and save profile
     try:
-        with open ('data.json', "r+") as data:
+        with open ('data.json', "a+") as data:
             if profile in data:
                 pass
             else:
-                json.dump(profile, data)
+                for i in profile:
+                    data.write(("\n|" + i + "|").replace('"',''))
+
     except FileNotFoundError:
-        with open ('data.json', "w") as data:
-            json.dump(profile, data)
+        with open ('data.json', "a+") as data:
+            for i in profile:
+                data.write(("\n|" + i + "|").replace('"',''))
 
 
 
