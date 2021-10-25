@@ -76,7 +76,7 @@ def save_new_staff(profile:dict, position:str): # :dict geeft aan dat de attribu
 
 
 def create_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
-    """Create and return a profile template."""
+    """Create and return a profile."""
     
     profile = {
         "name": name,
@@ -92,7 +92,7 @@ def create_profile(name=None, birthday=None, login=None, password=None, position
 
 
 def create_staff_json_file():
-    """Create staff.json if not already exist."""
+    """Create staff.json if not already exists."""
     
     # GETting Current Working Directory.
     PATH = os.getcwd()
@@ -126,7 +126,7 @@ def staff_json_file_is_empty():
 
 
 def create_staff_json_template():
-    """Create staff.json template."""
+    """Create staff.json template and upload it to staff.json."""
 
     """
     @dev The implemantation of this function needs improvements because
