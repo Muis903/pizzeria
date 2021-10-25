@@ -1,7 +1,112 @@
 {
-    "name": "piet van friet",
-    "birthday": "30/02/2000",
-    "login": "piet_van_friet_007",
-    "password": "password123",
-    "function": "hoofd manager"
+    "junior": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "jan bakker",
+            "birthday": "01/01/2001",
+            "login": "jan_brood_bakker",
+            "password": "broodje1Lekker#",
+            "position": "junior"
+        },
+        {
+            "name": "ronald pilske",
+            "birthday": "05/05/1992",
+            "login": "ik_hou_van_bier",
+            "password": "pilske_819_elkedag*",
+            "position": "junior"
+        },
+        {
+            "name": "erik perdijk",
+            "birthday": "01/01/0001",
+            "login": "gigi22",
+            "password": "kf3-Br111",
+            "position": "junior"
+        }
+    ],
+    "medio": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "jan janssen",
+            "birthday": "12/12/2002",
+            "login": "gojango",
+            "password": "janske121",
+            "position": "medio"
+        }
+    ],
+    "senior": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "bram van brammen",
+            "birthday": "21/04/2004",
+            "login": "bram_brom_11",
+            "password": "bram33Mw",
+            "position": "senior"
+        }
+    ],
+    "team leader": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "mike van dijk",
+            "birthday": "09/09/1996",
+            "login": "dijk_is_hier",
+            "password": "WorsTen_br00dj3",
+            "position": "team leader"
+        }
+    ],
+    "project leader": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        }
+    ],
+    "manager": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "piet van friet",
+            "birthday": "31/02/2000",
+            "login": "piety_van_friety",
+            "password": "piet2000",
+            "position": "manager"
+        },
+        {
+            "name": "hoi",
+            "birthday": "11111111",
+            "login": "hoi",
+            "password": "hoihoihoi",
+            "position": "manager"
+        }
+    ]
 }
