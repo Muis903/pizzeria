@@ -3,7 +3,6 @@
 #
 
 
-from data import save_order
 from random import choice
 
 
@@ -31,3 +30,11 @@ def get_order_id():
     order_id = numbers.pop(choice(numbers))
 
     return str(order_id)
+
+
+def save_order(order_id, order):
+    """SAVING AN ORDER."""
+    # Saving a new order in a dictionary.
+    order_id_to_order = {order_id: order}
+    print(order_id_to_order)
+    print("The new order is successfully saved!")
