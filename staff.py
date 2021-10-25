@@ -149,6 +149,8 @@ def save_new_person_profile(person_profile:dict, position:str): # :dict geeft aa
         # Joining person profile with file_data inside position dict.
         file_data[position].append(person_profile)
         # Sets file's current position at offset.
+        # Read more about Python's seek() function:
+        # https://www.geeksforgeeks.org/python-seek-function/
         file.seek(0)
         # Dumping the person profile to the file with indent of 4 spaces.
         json.dump(file_data, file, indent = 4)
