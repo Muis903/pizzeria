@@ -20,6 +20,13 @@
             "login": "ik_hou_van_bier",
             "password": "pilske_819_elkedag*",
             "position": "junior"
+        },
+        {
+            "name": "erik perdijk",
+            "birthday": "01/01/0001",
+            "login": "gigi22",
+            "password": "kf3-Br111",
+            "position": "junior"
         }
     ],
     "medio": [
