@@ -24,17 +24,18 @@ staff_json = "staff.json"
 def get_new_person_profile() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
     """Get a new person profile and save it into the staff.json."""
 
+    # Defining the person details.
     name, birthday, login, password, position = get_person_profile_input()
 
     #Create an object as a person profile in the form of Python dictionary.
     person_profile = create_person_profile(name, birthday, login, password, position)
     print("Created a new person profile.")
 
-    # Saving new staff.
+    # Saving the new person profile in staff.json file.
     save_new_person_profile(person_profile, position)
     print("The new person profile is successfully added into staff.json :)")
 
-    # Returning the person profile to work with further if need it.
+    # Returning the new person profile to work with further if need it.
     return person_profile
 
 
@@ -67,7 +68,7 @@ def get_staff_positions() -> list:
 
 def create_person_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
     """Create and return a person profile."""
-    
+   
     profile = {
         "name": name,
         "birthday": birthday,
@@ -76,11 +77,12 @@ def create_person_profile(name=None, birthday=None, login=None, password=None, p
         "position": position
     }
     
-
     return profile
 
 
-def create_staff_json_file():
+
+
+def check_for_staff_json_file():
     """Create staff.json if not already exists."""
     
     # GETting Current Working Directory.
@@ -94,9 +96,7 @@ def create_staff_json_file():
         print("Checked: found staff.json.")
 
 
-
-
-def create_staff_json_template():
+def check_for_staff_json_template():
     """Create staff.json template and upload it to staff.json."""
 
     """
@@ -125,20 +125,22 @@ def create_staff_json_template():
                 }
             ]
 
-        # Creating staff.json file if not already exists.
-        create_staff_json_file()
+        # Check for existance of staff.json file otherwise create it.
+        check_for_staff_json_file()
         # Saving the template to staff.json.
         with open(staff_json, 'r+') as file:
             json.dump(person_profile, file, indent=4)
 
 
+
+
 def save_new_person_profile(person_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
     """Save new person profile in staff.json file in json file format."""
 
-    # Create staff.json file is the file does not exist.
-    create_staff_json_file()
-    # Create staff.json template if the staff.json file is empty.
-    create_staff_json_template()
+    # Check for existance of staff.json file otherwise create it.
+    check_for_staff_json_file()
+    # Check for existance of staff.json template otherwise create it.
+    check_for_staff_json_template()
 
     # Putting the person profile into the staff.json.
     with open(staff_json, 'r+') as file:
@@ -152,11 +154,13 @@ def save_new_person_profile(person_profile:dict, position:str): # :dict geeft aa
         json.dump(file_data, file, indent = 4)
 
 
+
+
 def staff_json_file_is_empty():
     """Check if staff.json file is empty."""
 
     """
-    @dev We checking this by calling a specific json error that appears if can
+    @dev We checking this by causing a specific json error that appears if can
          not load the existing .json file because of emptiness.
          
          True if error occur and the file is actual empty.
@@ -176,7 +180,11 @@ def staff_json_file_is_empty():
 # <--- Test Function --->
 #
 
-# Remove # in order to test a specific function.
-#create_staff_json_file()
+"""
+@dev Actually this is not the case how to test the code.
+     For that we need to use pytest library.
+     I'll create later the apart directory to test our functions properly.
+     We will have to do that as the project growth up and every time input the name, birthday etc. is not an option.
+"""
+
 get_new_person_profile()
-#save_new_person_profile(create_person_profile())
