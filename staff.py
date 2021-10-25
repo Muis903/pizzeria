@@ -189,4 +189,3 @@ def staff_json_file_is_empty():
      We will have to do that as the project growth up and every time input the name, birthday etc. is not an option.
 """
 
-get_new_person_profile()
