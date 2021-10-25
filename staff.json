@@ -13,6 +13,13 @@
             "login": "jan_brood_bakker",
             "password": "broodje1Lekker#",
             "position": "junior"
+        },
+        {
+            "name": "ronald pilske",
+            "birthday": "05/05/1992",
+            "login": "ik_hou_van_bier",
+            "password": "pilske_819_elkedag*",
+            "position": "junior"
         }
     ],
     "medio": [
