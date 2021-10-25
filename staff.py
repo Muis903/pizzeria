@@ -21,7 +21,7 @@ staff_json = "staff.json"
 #
 
 
-def get_new_staff() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
+def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
     """Get new staff and save it into the staff.json."""
 
     #Data
@@ -41,7 +41,7 @@ def get_new_staff() -> dict: # dat de functie retourneert dict (voor leesbaarhei
     return staff_profile
 
 
-def get_positions() -> list:
+def get_staff_positions() -> list:
     """Return all positions inside of the company."""
 
     # Defining the positions inside of the company.
@@ -138,7 +138,7 @@ def create_staff_json_template():
     else:
         print("Creating a template in staff.json")
         # Getting all positions in the company.
-        positions = get_positions()
+        positions = get_staff_positions()
         # Defining the staff profile as Python dictionary.
         staff_profile = dict()
         # Looping through all positions and adding to the template.
@@ -167,5 +167,5 @@ def create_staff_json_template():
 
 # Remove # in order to test a specific function.
 #create_staff_json_file()
-get_new_staff()
+get_new_staff_profile()
 #save_new_staff(create_staff_profile())
