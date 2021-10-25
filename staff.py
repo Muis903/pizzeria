@@ -22,7 +22,7 @@ staff_json = "staff.json"
 
 
 def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
-    """Get new staff and save it into the staff.json."""
+    """Get a new staff profile and save it into the staff.json."""
 
     #Data
     name = input("First and last name: ")
@@ -35,7 +35,7 @@ def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor lee
     staff_profile = create_staff_profile(name, birthday, login, password, position)
 
     # Saving new staff.
-    save_new_staff(staff_profile, position)
+    save_new_staff_profile(staff_profile, position)
 
     # Returning the staff_profile to work with further if need it.
     return staff_profile
