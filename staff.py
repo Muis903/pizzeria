@@ -21,7 +21,7 @@ staff_json = "staff.json"
 #
 
 
-def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
+def get_new_person_profile() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
     """Get a new staff profile and save it into the staff.json."""
 
     #Data
@@ -32,13 +32,14 @@ def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor lee
     position = input("Position: ")
     
     #Create an object as a staff profile in the form of Python dictionary.
-    staff_profile = create_staff_profile(name, birthday, login, password, position)
+    person_profile = create_person_profile(name, birthday, login, password, position)
+    print("Created a new staff profile.")
 
     # Saving new staff.
-    save_new_staff_profile(staff_profile, position)
+    save_new_person_profile(person_profile, position)
 
-    # Returning the staff_profile to work with further if need it.
-    return staff_profile
+    # Returning the person_profile to work with further if need it.
+    return person_profile
 
 
 def get_staff_positions() -> list:
@@ -54,7 +55,7 @@ def get_staff_positions() -> list:
     return positions
 
 
-def save_new_staff_profile(staff_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
+def save_new_person_profile(person_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
     """Save new staff profile in staff.json file in json file format."""
 
     # Create staff.json file is the file does not exist.
@@ -67,7 +68,7 @@ def save_new_staff_profile(staff_profile:dict, position:str): # :dict geeft aan 
         # First we loading an existing staff into a Python dict.
         file_data = json.load(file)
         # Joining staff profile with file_data inside position dict.
-        file_data[position].append(staff_profile)
+        file_data[position].append(person_profile)
         # Sets file's current position at offset.
         file.seek(0)
         # Dumping the staff profile to the file with indent of 4 spaces.
@@ -75,7 +76,7 @@ def save_new_staff_profile(staff_profile:dict, position:str): # :dict geeft aan 
         print("The new staff profile is successfully added into staff.json :)")
 
 
-def create_staff_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
+def create_person_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
     """Create and return a staff profile."""
     
     profile = {
@@ -86,7 +87,6 @@ def create_staff_profile(name=None, birthday=None, login=None, password=None, po
         "position": position
     }
     
-    print("Created a new staff profile.")
 
     return profile
 
@@ -140,11 +140,11 @@ def create_staff_json_template():
         # Getting all positions in the company.
         staff_positions = get_staff_positions()
         # Defining the staff profile as Python dictionary.
-        staff_profile = dict()
+        person_profile = dict()
         # Looping through all positions and adding to the template.
         for position in staff_positions:
             # Key/value pair, where position is a key and the rest is the value.
-            staff_profile[position] = [
+            person_profile[position] = [
                 {   
                     "name": None,
                     "birthday": None,
@@ -158,7 +158,7 @@ def create_staff_json_template():
         create_staff_json_file()
         # Saving the template to staff.json.
         with open(staff_json, 'r+') as file:
-            json.dump(staff_profile, file, indent=4)
+            json.dump(person_profile, file, indent=4)
 
 
 #
@@ -167,5 +167,5 @@ def create_staff_json_template():
 
 # Remove # in order to test a specific function.
 #create_staff_json_file()
-get_new_staff_profile()
-#save_new_staff_profile(create_staff_profile())
+get_new_person_profile()
+#save_new_person_profile(create_person_profile())
