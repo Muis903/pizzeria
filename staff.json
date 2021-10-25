@@ -1,7 +1,70 @@
 {
-    "name": "piet van friet",
-    "birthday": "30/02/2000",
-    "login": "piet_van_friet_007",
-    "password": "password123",
-    "function": "hoofd manager"
+    "junior": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "jan bakker",
+            "birthday": "01/01/2001",
+            "login": "jan_brood_bakker",
+            "password": "broodje1Lekker#",
+            "position": "junior"
+        }
+    ],
+    "medio": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        }
+    ],
+    "senior": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        }
+    ],
+    "team leader": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        }
+    ],
+    "project leader": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        }
+    ],
+    "manager": [
+        {
+            "name": null,
+            "birthday": null,
+            "login": null,
+            "password": null,
+            "position": null
+        },
+        {
+            "name": "piet van friet",
+            "birthday": "31/02/2000",
+            "login": "piety_van_friety",
+            "password": "piet2000",
+            "position": "manager"
+        }
+    ]
 }
