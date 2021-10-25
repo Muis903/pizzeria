@@ -22,7 +22,7 @@ staff_json = "staff.json"
 
 
 def get_new_staff() -> dict: # dat de functie retourneert dict (voor leesbaarheid bedoeld). Kan ook niet gebruiken. Verwirder deze omschrijving als duidelijk.
-    """Get new staff and save it into the json."""
+    """Get new staff and save it into the staff.json."""
 
     #Data
     name = input("First and last name: ")
@@ -31,18 +31,18 @@ def get_new_staff() -> dict: # dat de functie retourneert dict (voor leesbaarhei
     password = input("Password: ")
     position = input("Position: ")
     
-    #Create an object as a profile in the form of Python dictionary.
-    profile = create_profile(name, birthday, login, password, position)
+    #Create an object as a staff profile in the form of Python dictionary.
+    staff_profile = create_staff_profile(name, birthday, login, password, position)
 
     # Saving new staff.
-    save_new_staff(profile, position)
+    save_new_staff(staff_profile, position)
 
-    # Returning the profile to work with further if need it.
-    return profile
+    # Returning the staff_profile to work with further if need it.
+    return staff_profile
 
 
 def get_positions() -> list:
-    """Return all positions."""
+    """Return all positions inside of the company."""
 
     # Defining the positions inside of the company.
     # @dev Feel free to add more
@@ -54,31 +54,31 @@ def get_positions() -> list:
     return positions
 
 
-def save_new_staff(profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
-    """Save new staff in json file format."""
+def save_new_staff(staff_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
+    """Save new staff in staff.json file in json file format."""
 
     # Create staff.json file is the file does not exist.
     create_staff_json_file()
-    # Create staff.json template if the staff.json is empty.
+    # Create staff.json template if the staff.json file is empty.
     create_staff_json_template()
 
-    # Putting the profile into the staff.json.
+    # Putting the staff profile into the staff.json.
     with open(staff_json, 'r+') as file:
-        # First we loading existing staff into a dict.
+        # First we loading an existing staff into a Python dict.
         file_data = json.load(file)
-        # Joining profile with file_data inside position.
-        file_data[position].append(profile)
+        # Joining staff profile with file_data inside position dict.
+        file_data[position].append(staff_profile)
         # Sets file's current position at offset.
         file.seek(0)
-        # Dumping the profile to the file with indent of 4 spaces.
+        # Dumping the staff profile to the file with indent of 4 spaces.
         json.dump(file_data, file, indent = 4)
-        print("The new profile is successfully added into staff.json :)")
+        print("The new staff profile is successfully added into staff.json :)")
 
 
-def create_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
-    """Create and return a profile."""
+def create_staff_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
+    """Create and return a staff profile."""
     
-    profile = {
+    staff_profile = {
         "name": name,
         "birthday": birthday,
         "login": login,
@@ -86,9 +86,9 @@ def create_profile(name=None, birthday=None, login=None, password=None, position
         "position": position
     }
     
-    print("Created a new profile.")
+    print("Created a new staff profile.")
 
-    return profile
+    return staff_profile
 
 
 def create_staff_json_file():
@@ -139,12 +139,12 @@ def create_staff_json_template():
         print("Creating a template in staff.json")
         # Getting all positions in the company.
         positions = get_positions()
-        # Defining the profile as Python dictionary.
-        profile = dict()
+        # Defining the staff profile as Python dictionary.
+        staff_profile = dict()
         # Looping through all positions and adding to the template.
         for position in positions:
             # Key/value pair, where position is a key and the rest is the value.
-            profile[position] = [
+            staff_profile[position] = [
                 {   
                     "name": None,
                     "birthday": None,
@@ -158,7 +158,7 @@ def create_staff_json_template():
         create_staff_json_file()
         # Saving the template to staff.json.
         with open(staff_json, 'r+') as file:
-            json.dump(profile, file, indent=4)
+            json.dump(staff_profile, file, indent=4)
 
 
 #
@@ -168,4 +168,4 @@ def create_staff_json_template():
 # Remove # in order to test a specific function.
 #create_staff_json_file()
 get_new_staff()
-#save_new_staff(create_profile())
+#save_new_staff(create_staff_profile())
