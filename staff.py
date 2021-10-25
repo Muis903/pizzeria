@@ -42,7 +42,7 @@ def get_new_staff_profile() -> dict: # dat de functie retourneert dict (voor lee
 
 
 def get_staff_positions() -> list:
-    """Return all positions inside of the company."""
+    """Return all staff_positions inside of the company."""
 
     # Defining the positions inside of the company.
     # @dev Feel free to add more
@@ -78,7 +78,7 @@ def save_new_staff_profile(staff_profile:dict, position:str): # :dict geeft aan 
 def create_staff_profile(name=None, birthday=None, login=None, password=None, position=None): # None betekent dat de waarde van de parameter is niet vereist. Verwijder de omschrijving als duidelijk :)
     """Create and return a staff profile."""
     
-    staff_profile = {
+    profile = {
         "name": name,
         "birthday": birthday,
         "login": login,
@@ -88,7 +88,7 @@ def create_staff_profile(name=None, birthday=None, login=None, password=None, po
     
     print("Created a new staff profile.")
 
-    return staff_profile
+    return profile
 
 
 def create_staff_json_file():
@@ -138,11 +138,11 @@ def create_staff_json_template():
     else:
         print("Creating a template in staff.json")
         # Getting all positions in the company.
-        positions = get_staff_positions()
+        staff_positions = get_staff_positions()
         # Defining the staff profile as Python dictionary.
         staff_profile = dict()
         # Looping through all positions and adding to the template.
-        for position in positions:
+        for position in staff_positions:
             # Key/value pair, where position is a key and the rest is the value.
             staff_profile[position] = [
                 {   
