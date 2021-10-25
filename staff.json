@@ -72,6 +72,13 @@
             "login": "piety_van_friety",
             "password": "piet2000",
             "position": "manager"
+        },
+        {
+            "name": "hoi",
+            "birthday": "11111111",
+            "login": "hoi",
+            "password": "hoihoihoi",
+            "position": "manager"
         }
     ]
 }

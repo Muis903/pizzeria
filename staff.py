@@ -54,8 +54,8 @@ def get_staff_positions() -> list:
     return positions
 
 
-def save_new_staff(staff_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
-    """Save new staff in staff.json file in json file format."""
+def save_new_staff_profile(staff_profile:dict, position:str): # :dict geeft aan dat de attribuut dict MOET zijn. Er zijn nog :str, :list ezv. Verwijder de omschrijving als duidelijk ;-)
+    """Save new staff profile in staff.json file in json file format."""
 
     # Create staff.json file is the file does not exist.
     create_staff_json_file()
@@ -168,4 +168,4 @@ def create_staff_json_template():
 # Remove # in order to test a specific function.
 #create_staff_json_file()
 get_new_staff_profile()
-#save_new_staff(create_staff_profile())
+#save_new_staff_profile(create_staff_profile())
