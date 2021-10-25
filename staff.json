@@ -61,6 +61,13 @@
             "login": null,
             "password": null,
             "position": null
+        },
+        {
+            "name": "mike van dijk",
+            "birthday": "09/09/1996",
+            "login": "dijk_is_hier",
+            "password": "WorsTen_br00dj3",
+            "position": "team leader"
         }
     ],
     "project leader": [
