@@ -45,7 +45,7 @@ def save_new_staff(name, birthday, login, password, function):
         "function": function
     }
 
-    # Putting the profile into the json.
+    # Putting the profile into the staff.json.
     with open(staff_json, 'w') as file:
         # Dumping the profile to the file with indent of 4 spaces.
         json.dump(profile, file, indent=4)
