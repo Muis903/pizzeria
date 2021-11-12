@@ -162,8 +162,14 @@ def delete_item_from_menu_card():
     pass
 
 
-def display_menu_card():
-    pass
+def get_menu_card():
+    """Return whole menu card."""
+
+    with open(menu_card_json, "r+") as file:
+        # First we loading an existing menu card into a Python dictionary.
+        file_data = json.load(file)
+
+    return file_data
 
 
 def choose_item():
