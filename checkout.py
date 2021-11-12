@@ -11,6 +11,7 @@ class CheckOut():
     def sing_up(self):
         if self.login == s_d.manager['login'] and self.password == s_d.manager['password']:
             print("Welcome manager!")
+        elif self.login == s_d.manager
 
 
 test = CheckOut('7512077532', '210220022210')

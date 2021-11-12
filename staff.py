@@ -83,7 +83,7 @@ def create_person_profile(name=None, birthday=None, login=None, password=None, p
 
 
 def check_for_staff_json_file():
-    """Create staff.json if not already exists."""
+    """Check for staff.json otherwise create one."""
     
     # GETting Current Working Directory.
     PATH = os.getcwd()
@@ -97,7 +97,7 @@ def check_for_staff_json_file():
 
 
 def check_for_staff_json_template():
-    """Create staff.json template and upload it to staff.json."""
+    """Check for template in staff.json, otherwise upload it to staff.json."""
 
     """
     @dev The implemantation of this function needs improvements because
@@ -110,7 +110,7 @@ def check_for_staff_json_template():
         print("Creating a template in staff.json")
         # Getting all positions in the company.
         staff_positions = get_staff_positions()
-        # Defining the person profile as Python dictionary.
+        # Defining the person profile as Python dictionary (woordenboek!).
         person_profile = dict()
         # Looping through all positions and adding to the template.
         for position in staff_positions:
