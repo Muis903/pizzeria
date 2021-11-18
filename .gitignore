@@ -5,3 +5,5 @@
 *.swp
 
 __pycache__/
+.pytest_cache
+self_made_python_libraries

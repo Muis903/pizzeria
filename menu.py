@@ -1,5 +1,6 @@
 import json
 import os
+from self_made_python_libraries.file import File
 
 
 #
@@ -78,6 +79,10 @@ def create_item(item_type=None, item_sectie=None, name=None, price=None):
 
 def menu_card_json_file_is_empty():
     """Check if menu_card.json file is empty."""
+
+    # Check for existance of menu_card.json file otherwise create one.
+    check_for_menu_card_json_file()
+
     try:
         with open(menu_card_json, "r+") as file:
             json.load(file)
@@ -96,17 +101,17 @@ def check_for_menu_card_json_file():
     # If menu_card.json not in the current working directory, then create one.
     if menu_card_json not in os.listdir(PATH):
         open(menu_card_json, "w")
-        print("Created new menu_card.json file.")
+        # Created new menu_card.json file.
     else:
-        print("Checked: found menu_card.json file.")
+        # Checked: found menu_card.json file.
+        pass
 
 
 def check_for_menu_card_json_template():
     """Check for template in manu_card.json, otherwise upload it to menu_card.json"""
     if menu_card_json_file_is_empty() == False:
-        print("Checked: menu_card.json is not empty.")
-    else:
-        print("Creating a template in menu_card.json")
+        pass # menu_card.json is not empty
+    else: # Creating a template in menu_card.json
         # Getting all item types for menu card.
         item_types = get_item_types()
         # Defining the menu card as Python dictionary.
@@ -125,8 +130,6 @@ def check_for_menu_card_json_template():
                 }
             ]
 
-        # Check for existance of menu_card.json file otherwise create one.
-        check_for_menu_card_json_file()
         # Saving the template to menu_card.json.
         with open(menu_card_json, 'r+') as file:
             json.dump(menu_card, file, indent=4)
@@ -167,9 +170,9 @@ def get_menu_card():
 
     with open(menu_card_json, "r+") as file:
         # First we loading an existing menu card into a Python dictionary.
-        file_data = json.load(file)
+        menu_card = json.load(file)
 
-    return file_data
+    return menu_card
 
 
 def choose_item():
@@ -179,3 +182,5 @@ def choose_item():
 # TEST
 #
 
+f = File()
+print(f)
