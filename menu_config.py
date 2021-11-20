@@ -1,11 +1,11 @@
-from self_made_python_libraries.file import File
+from lib.file import File
 
 
 file = File()
 
 # MANU CARD
 MENU_CARD_DATA_FILE_NAME = "menu_card.yaml"
-PATH_TO_MENU_CARD_DATA = f"./{MENU_CARD_FILE_NAME}"
+PATH_TO_MENU_CARD_DATA = f"./{MENU_CARD_DATA_FILE_NAME}"
 MENU_CARD_DATA_IS_EXIST = file.is_exist(PATH_TO_MENU_CARD_DATA)
 MENU_CARD_DATA_IS_EMPTY = file.is_empty(PATH_TO_MENU_CARD_DATA)
 MENU_CARD_DATA_TEMPLATE = None
