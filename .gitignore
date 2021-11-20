@@ -5,3 +5,6 @@
 *.swp
 
 __pycache__/
+.pytest_cache
+.DS_Store
+#self_made_python_libraries
